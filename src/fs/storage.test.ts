@@ -67,7 +67,7 @@ describe("SessionStorageFSStorage", () => {
 });
 
 describe("InMemoryFSStorage", () => {
-  const storage = new InMemoryFSStorage();
+  const storage = new InMemoryFSStorage('test');
   beforeEach(() => {
     storage.clear();
   });
@@ -76,7 +76,7 @@ describe("InMemoryFSStorage", () => {
 
 describe("SplitStrategyStorage", () => {
   const storage = new SplitStrategyStorage(
-    new InMemoryFSStorage(),
+    new InMemoryFSStorage('test'),
     new SessionStorageFSStorage(sessionStorage),
     new NullLogging()
   );
@@ -88,7 +88,7 @@ describe("SplitStrategyStorage", () => {
   commonStorageTests(storage);
 
   it("initializes from session storage", async () => {
-    const memory = new InMemoryFSStorage();
+    const memory = new InMemoryFSStorage('test');
     const session = new SessionStorageFSStorage(sessionStorage);
     session.write("test1.py", new Uint8Array([1]));
 
@@ -98,7 +98,7 @@ describe("SplitStrategyStorage", () => {
   });
 
   it("clears and stops using session storage if we hit errors", async () => {
-    const memory = new InMemoryFSStorage();
+    const memory = new InMemoryFSStorage('test');
     const session = new SessionStorageFSStorage(sessionStorage);
 
     const log = new MockLogging();

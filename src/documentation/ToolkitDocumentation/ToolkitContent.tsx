@@ -30,7 +30,7 @@ interface ToolkitContentProps {
 
 export const defaultQuality = 80;
 
-const imageUrlBuilder = unconfiguredImageUrlBuilder()
+export const imageUrlBuilder = unconfiguredImageUrlBuilder()
   // Hardcoded for now as there's no practical alternative.
   .projectId("ajwvhvgo")
   .dataset("apps")

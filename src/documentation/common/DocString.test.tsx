@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 import { render } from "@testing-library/react";
-import { renderMarkdown } from "../editor/codemirror/language-server/documentation";
+import { renderMarkdown } from "../../editor/codemirror/language-server/documentation";
 import DocString from "./DocString";
 
 describe("DocString", () => {

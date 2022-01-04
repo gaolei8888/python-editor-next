@@ -529,7 +529,9 @@ export class MicrobitWebUSBConnection
       return this.device;
     }
     this.device = await navigator.usb.requestDevice({
-      filters: [{ vendorId: 0x0d28, productId: 0x0204 }],
+      filters: [
+        // { vendorId: 0x0d28, productId: 0x0204 }
+      ],
     });
     return this.device;
   }

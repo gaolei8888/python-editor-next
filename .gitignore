@@ -26,3 +26,7 @@ __pycache__
 *.pyc
 /reports/*
 /crowdin/*
+
+
+.idea
+yarn.lock
